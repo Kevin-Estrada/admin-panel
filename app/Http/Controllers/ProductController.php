@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -35,6 +36,33 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         dd($request->all());
+        // Validate the form
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'image' => 'image|required',
+        ]);
+
+        // Upload the image
+        if($request->hasFile('image')) {
+            $image = $request->image;
+            $image->move('uploads',$image->getClientOriginalName());
+        }
+
+        // Save the data into database
+        Product::create([
+            'name' => $request->name,
+            'price' => $request->price,
+            'description' => $request->description,          
+            'image' => $request->image->getClientOriginalName()
+        ]);
+
+        // Sessions Message
+        $request->session()->flash('msg','Your product has been added!');
+
+        // Redirect
+        return redirect('products/create');
     }
 
     /**
