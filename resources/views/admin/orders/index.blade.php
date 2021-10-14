@@ -7,6 +7,8 @@
 @section('content')
     <div class="row">
 
+        {{-- {{ dd($orders) }} --}}
+
         <div class="col-md-12">
 
             @include('admin.layouts.message')
