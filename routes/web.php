@@ -5,7 +5,7 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 // Dashboards Route
-Route::get('/', [DashboardController::class, 'index']);
+Route::get('/admin', [DashboardController::class, 'index']);
 
 //Products
-Route::resource('/products', ProductController::class);
+Route::resource('/admin/products', ProductController::class);
