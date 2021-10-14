@@ -9,30 +9,48 @@ class OrderController extends Controller
 {
     public function index() {
         $orders = Order::all();
-        return view('admin.orders.index',compact('orders'));
+        return view('admin.orders.index', compact('orders'));
     }
 
-    public function create() {
+
+    public function confirm($id) {
+
+        // Find the order
+        $order = Order::find($id);
+
+        // Update the Order
+        $order->update(['status' => 1]);
+
+        // Session message
+        session()->flash('msg','Order has been confirmed');
+
+        // Redirect the page
+        return redirect('admin/orders');
+
 
     }
 
-    public function store(Request $request) {
 
-    }
+    public function pending($id){
 
-    public function edit($id) {
+        // Find the order
+        $order = Order::find($id);
 
-    }
+        // Update the order status
 
-    public function update(Request $request, $id) {
+        $order->update(['status' => 0]);
+
+        // Session Message
+        session()->flash('msg','Order has been again into pending');
+
+        // Redirect the page
+        return redirect('admin/orders');
 
     }
 
     public function show($id) {
-
+        $order = Order::find($id);
+        return view('admin.orders.details', compact('order'));
     }
 
-    public function destroy($id) {
-
-    }
 }

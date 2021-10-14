@@ -5,11 +5,19 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
-// Dashboards Route
-Route::get('/admin', [DashboardController::class, 'index']);
+/*
+ * Admin Routes
+ */
+Route::prefix('admin')->group(function() {
+        // Dashboards Route
+        Route::get('/', [DashboardController::class, 'index']);
+        
+        //Products
+        Route::resource('/products', ProductController::class);
+        
+        //Orders
+        Route::resource('/orders', OrderController::class);
+        Route::get('/confirm/{id}', [OrderController::class, 'confirm'])->name('order.confirm');
+        Route::get('/pending/{id}', [OrderController::class, 'pending'])->name('order.pending');
 
-//Products
-Route::resource('/admin/products', ProductController::class);
-
-//Orders
-Route::resource('/admin/orders', OrderController::class);
+});
