@@ -44,15 +44,14 @@
                         <div class="col-xs-7">
                             <div class="numbers">
                                 <p>Products</p>
-                                $1,110
-                                {{-- {{ $product->count() }} --}}
+                                {{ $product->count() }}
                             </div>
                         </div>
                     </div>
                     <div class="footer">
                         <hr/>
                         <div class="stats">
-                            <a href="{{ url('/products') }}"><i class="ti-panel"></i> Details</a>
+                            <a href="{{ url('/admin/products') }}"><i class="ti-panel"></i> Details</a>
                         </div>
                     </div>
                 </div>
@@ -70,15 +69,14 @@
                         <div class="col-xs-7">
                             <div class="numbers">
                                 <p>Orders</p>
-                                115
-                                {{-- {{ $order->count() }} --}}
+                                {{ $order->count() }}
                             </div>
                         </div>
                     </div>
                     <div class="footer">
                         <hr/>
                         <div class="stats">
-                            <a href="{{ url('/orders') }}"><i class="ti-panel"></i> Orders</a>
+                            <a href="{{ url('/admin/orders') }}"><i class="ti-panel"></i> Orders</a>
                         </div>
                     </div>
                 </div>
@@ -96,15 +94,14 @@
                         <div class="col-xs-7">
                             <div class="numbers">
                                 <p>Users</p>
-                                10
-                                {{-- {{ $user->count() }} --}}
+                                {{ $user->count() }}
                             </div>
                         </div>
                     </div>
                     <div class="footer">
                         <hr/>
                         <div class="stats">
-                            <a href="{{ url('/users') }}"><i class="ti-panel"></i> Users</a>
+                            <a href="{{ url('/admin/users') }}"><i class="ti-panel"></i> Users</a>
                         </div>
                     </div>
                 </div>
