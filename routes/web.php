@@ -21,8 +21,8 @@ Route::prefix('admin')->group(function() {
 
                 // Orders
                 Route::resource('/orders', OrderController::class);
-                Route::get('/confirm/{id}', [DashboardController::class , 'confirm'])->name('order.confirm');
-                Route::get('/pending/{id}', [DashboardController::class , 'pending'])->name('order.pending');
+                Route::get('/confirm/{id}', [OrderController::class , 'confirm'])->name('order.confirm');
+                Route::get('/pending/{id}', [OrderController::class , 'pending'])->name('order.pending');
 
                 // Users
                 Route::resource('/users', UsersController::class);

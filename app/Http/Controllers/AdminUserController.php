@@ -31,12 +31,12 @@ class AdminUserController extends Controller
         if ($auth instanceof \Illuminate\Contracts\Auth\StatefulGuard){
             if (! $auth->attempt($credentials)) {
                 return back()->withErrors([
-                    'message' => 'Wrong credentials please try again'
+                    'message' => 'Wrong credentials. Please try again'
                 ]);
             }
     
             // Session message
-            session()->flash('msg','You have been logged in');
+            session()->flash('msg','You have been logged in!');
     
             return redirect('/admin');
         }else{
@@ -50,7 +50,7 @@ class AdminUserController extends Controller
         if ($auth instanceof \Illuminate\Contracts\Auth\StatefulGuard){
             $auth->logout();
 
-            session()->flash('msg','You have been logged out');
+            session()->flash('msg','You have been logged out successfully!');
 
             return redirect('/admin/login');
         }else{

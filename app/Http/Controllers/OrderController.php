@@ -22,7 +22,7 @@ class OrderController extends Controller
         $order->update(['status' => 1]);
 
         // Session message
-        session()->flash('msg','Order has been confirmed');
+        session()->flash('msg','The order has been confirmed!');
 
         // Redirect the page
         return redirect('admin/orders');
@@ -41,7 +41,7 @@ class OrderController extends Controller
         $order->update(['status' => 0]);
 
         // Session Message
-        session()->flash('msg','Order has been again into pending');
+        session()->flash('msg','The order has been chagned to pending!');
 
         // Redirect the page
         return redirect('admin/orders');

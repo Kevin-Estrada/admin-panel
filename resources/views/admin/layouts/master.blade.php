@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-    <title>JavasShop Admin</title>
+    <title>Estrada Admin Panel</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
     <meta name="viewport" content="width=device-width"/>
@@ -82,17 +82,12 @@
                                 Blog
                             </a>
                         </li>
-                        <li>
-                            <a href="">
-                                Licenses
-                            </a>
-                        </li>
                     </ul>
                 </nav>
                 <div class="copyright pull-right">
                     &copy;
                     <script>document.write(new Date().getFullYear())</script>
-                    , made with <i class="fa fa-heart heart"></i> by <a href="">Javed</a>
+                    , made with <i class="fa fa-heart heart"></i> by <a href="">Kevin Estrada</a>
                 </div>
             </div>
         </footer>
