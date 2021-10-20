@@ -32,7 +32,7 @@ Route::prefix('admin')->group(function() {
         });
         
         // Admin Login
-        Route::get('/login', [AdminUserController::class , 'index']);
+        Route::get('/login', [AdminUserController::class , 'index'])->name('login');
         Route::post('/login', [AdminUserController::class , 'store']);
 
 });
